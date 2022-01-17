@@ -19,7 +19,10 @@ import org.springframework.web.client.RestTemplate;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import static com.oddle.app.weather.utility.DateHelper.getFormattedLocalDate;

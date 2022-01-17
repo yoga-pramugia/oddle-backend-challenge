@@ -24,7 +24,7 @@ import java.util.Collection;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-import static org.hamcrest.Matchers.allOf;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.*;
 
 public class WeatherServiceTest {
