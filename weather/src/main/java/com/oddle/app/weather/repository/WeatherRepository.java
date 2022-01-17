@@ -21,6 +21,14 @@ public interface WeatherRepository extends JpaRepository<Weather, Long> {
 
     @Query(
             value = "SELECT * FROM WEATHER w WHERE w.city_name = :cityName AND (DATE(w.created_date) BETWEEN " +
+                    "DATE_SUB(NOW(), INTERVAL 1 DAY) AND " +
+                    "DATE_SUB(NOW(), INTERVAL 7 DAY))" +
+                    "AND w.is_active = 1",
+            nativeQuery = true)
+    Collection<Weather> findAllByIntervalAWeek(@Param("cityName") String cityName);
+
+    @Query(
+            value = "SELECT * FROM WEATHER w WHERE w.city_name = :cityName AND (DATE(w.created_date) BETWEEN " +
                     "DATE_SUB(NOW(), INTERVAL 1 MONTH) AND " +
                     "DATE_SUB(NOW(), INTERVAL 2 MONTH))" +
                     "AND w.is_active = 1",
