@@ -1,8 +1,6 @@
 package com.oddle.app.weather.entity;
 
 import com.oddle.app.weather.constant.TemperatureType;
-import com.oddle.app.weather.model.TodayWeatherResponse;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

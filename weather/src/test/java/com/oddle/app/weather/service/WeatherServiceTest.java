@@ -24,7 +24,7 @@ import java.util.Collection;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-import static org.hamcrest.Matchers.allOf;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.*;
 
 public class WeatherServiceTest {
@@ -91,6 +91,24 @@ public class WeatherServiceTest {
 
         Mockito.when(
                 weatherRepository.findAllByIntervalADay(cityName))
+                .thenReturn(getDummyCollection());
+
+        Collection<TodayWeatherResponse> responses = weatherService.getWeathersByPeriod(cityName, period);
+        assertThat(responses, hasItem(allOf(
+                hasProperty("cityName", is("Jakarta")),
+                hasProperty("temp", is(32.1)),
+                hasProperty("tempType", is(TemperatureType.CELSIUS.name()))
+        )));
+
+    }
+
+    @Test
+    public void getWeathersByPeriodWeek() {
+        String cityName = "Jakarta";
+        String period = "Week";
+
+        Mockito.when(
+                weatherRepository.findAllByIntervalAWeek(cityName))
                 .thenReturn(getDummyCollection());
 
         Collection<TodayWeatherResponse> responses = weatherService.getWeathersByPeriod(cityName, period);

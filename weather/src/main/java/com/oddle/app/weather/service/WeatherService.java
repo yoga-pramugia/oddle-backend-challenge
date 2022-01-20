@@ -19,7 +19,10 @@ import org.springframework.web.client.RestTemplate;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import static com.oddle.app.weather.utility.DateHelper.getFormattedLocalDate;
@@ -92,9 +95,9 @@ public class WeatherService {
     }
 
     /**
-     * Get collection of weathers based on period (DAY, MONTH, YEAR)
+     * Get collection of weathers based on period (DAY, WEEK, MONTH, YEAR)
      * @param cityName  name of city
-     * @param period DAY, MONTH, YEAR
+     * @param period DAY, WEEK, MONTH, YEAR
      */
     @Transactional(readOnly = true)
     public Collection<TodayWeatherResponse> getWeathersByPeriod(String cityName, String period) {
@@ -105,6 +108,9 @@ public class WeatherService {
         switch (period.toUpperCase()) {
             case "DAY":
                 weathers.addAll(weatherRepository.findAllByIntervalADay(cityName));
+                break;
+            case "WEEK":
+                weathers.addAll(weatherRepository.findAllByIntervalAWeek(cityName));
                 break;
             case "MONTH":
                 weathers.addAll(weatherRepository.findAllByIntervalAMonth(cityName));
