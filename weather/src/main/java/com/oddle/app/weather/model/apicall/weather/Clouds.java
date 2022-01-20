@@ -14,4 +14,5 @@ public class Clouds implements Serializable {
     private static final long serialVersionUID = -2373461542974631928L;
 
     private int all;
+
 }

@@ -65,8 +65,4 @@ public class Weather extends BaseEntity {
         this.isActive = isActive;
         return this;
     }
-
-    public Weather build() {
-        return new Weather(cityName, temp, tempType, isActive);
-    }
 }

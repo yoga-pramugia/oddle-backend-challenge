@@ -20,6 +20,11 @@ public class DateHelper {
         return dateTime.format(formatter);
     }
 
+    /**
+     * Convert string into local date time
+     * @param date string date
+     * @return formatted local date time
+     */
     public static LocalDateTime setFormattedDate(String date) {
         final DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE;
         return LocalDate.parse(date, formatter).atStartOfDay();

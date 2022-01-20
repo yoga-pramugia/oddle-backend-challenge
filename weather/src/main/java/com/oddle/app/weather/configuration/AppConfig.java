@@ -26,12 +26,10 @@ public class AppConfig implements WebMvcConfigurer {
                 .setConnectionRequestTimeout(timeout * 1000)
                 .setSocketTimeout(timeout * 1000)
                 .build();
-
         CloseableHttpClient client = HttpClientBuilder
                 .create()
                 .setDefaultRequestConfig(config)
                 .build();
-
         ClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(client);
 
         return new RestTemplate(requestFactory);

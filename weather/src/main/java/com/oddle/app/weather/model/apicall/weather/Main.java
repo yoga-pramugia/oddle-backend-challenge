@@ -14,7 +14,10 @@ public class Main implements Serializable {
     private static final long serialVersionUID = -5611495708155925138L;
 
     private int id;
+
     private String main;
+
     private String description;
+
     private String icon;
 }

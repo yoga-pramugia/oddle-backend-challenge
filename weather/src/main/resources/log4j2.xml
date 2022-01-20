@@ -5,8 +5,7 @@
     </Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout
-                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%T] [%X{requestId}] %level %logger{10} - %msg%n"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%T] [%X{requestId}] %level %logger{10} - %msg%n"/>
         </Console>
         <RollingFile name="origination-service-file" fileName="${log-path}/oddle-backend-challange.log"
                      filePattern="${log-path}/oddle-backend-challange-%d{yyyy-MM-dd}-%i.old.log">

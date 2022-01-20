@@ -41,6 +41,7 @@ public class WeatherServiceTest {
     @BeforeEach
     public void init() {
         MockitoAnnotations.openMocks(this);
+
         weatherService = new WeatherService(restTemplate, weatherRepository);
         ReflectionTestUtils.setField(weatherService, "apiWeatherUrl", "TEST_URL");
         ReflectionTestUtils.setField(weatherService, "apiWeatherKey", "TEST_KEY");

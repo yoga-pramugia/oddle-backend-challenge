@@ -40,6 +40,7 @@ public class WeatherController {
     @PostMapping(value = "/v1/weather", produces = MediaType.APPLICATION_JSON_VALUE)
     public void saveWeatherTodayByCity(@RequestBody WeatherRequest request){
         LOGGER.info("saveWeatherTodayByCity - request: {}", request);
+
         weatherService.saveWeather(request);
     }
 
@@ -48,6 +49,7 @@ public class WeatherController {
     public Collection<TodayWeatherResponse> getWeatherByPeriod(@RequestParam(name = "cityName") String cityName,
                                                                @RequestParam(name = "period") String period){
         LOGGER.info("getWeatherByPeriod - cityName: {} and period: {}", cityName, period);
+
         return weatherService.getWeathersByPeriod(cityName, period);
     }
 
@@ -55,6 +57,7 @@ public class WeatherController {
     @PutMapping(value = "/v1/weather/deactive", produces = MediaType.APPLICATION_JSON_VALUE)
     public void deactivateWeather(@RequestParam(name = "id") String id){
         LOGGER.info("deactivateWeather - id: {}", id);
+
         weatherService.deactivateWeather(Long.valueOf(id));
     }
 
@@ -62,6 +65,7 @@ public class WeatherController {
     @PutMapping(value = "/v1/weather/update", produces = MediaType.APPLICATION_JSON_VALUE)
     public void updateWeatherPeriod(@RequestBody WeatherRequest request){
         LOGGER.info("updateWeatherPeriod - request: {}", request);
+
         weatherService.updateWeatherPeriod(request);
     }
 }

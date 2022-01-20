@@ -40,8 +40,7 @@ public class WeatherControllerTest {
 
     @BeforeEach
     public void init() {
-        mockMvc = MockMvcBuilders.standaloneSetup(weatherController)
-                .build();
+        mockMvc = MockMvcBuilders.standaloneSetup(weatherController).build();
     }
 
     @Test

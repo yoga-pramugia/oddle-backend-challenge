@@ -33,6 +33,7 @@ public class WeatherService {
     private static final Logger LOGGER = LogManager.getLogger(WeatherService.class.getName());
 
     private final RestTemplate restTemplate;
+
     private final WeatherRepository weatherRepository;
 
     public WeatherService(RestTemplate restTemplate, WeatherRepository weatherRepository) {

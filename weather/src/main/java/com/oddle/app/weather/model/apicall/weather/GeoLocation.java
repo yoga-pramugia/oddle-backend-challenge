@@ -14,8 +14,12 @@ public class GeoLocation implements Serializable {
     private static final long serialVersionUID = -2598561625710038242L;
 
     private int type;
+
     private int id;
+
     private String country;
+
     private int sunrise;
+
     private int sunset;
 }

@@ -14,9 +14,13 @@ public class TodayWeatherResponse implements Serializable {
     private static final long serialVersionUID = 1209936581661731719L;
 
     private Long id;
+
     private String cityName;
+
     private double temp;
+
     private String tempType;
+
     private String requestedOn;
 
     public static TodayWeatherResponse create() {

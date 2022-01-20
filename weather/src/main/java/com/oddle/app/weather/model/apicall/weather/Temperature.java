@@ -14,9 +14,14 @@ public class Temperature implements Serializable {
     private static final long serialVersionUID = -2349313237238340079L;
 
     private double temp;
+
     private double feels_like;
+
     private double temp_min;
+
     private double temp_max;
+
     private int pressure;
+
     private int humidity;
 }

@@ -15,5 +15,6 @@ public class Coordinate implements Serializable {
     private static final long serialVersionUID = 1502197689636040415L;
 
     private double lon;
+
     private double lat;
 }

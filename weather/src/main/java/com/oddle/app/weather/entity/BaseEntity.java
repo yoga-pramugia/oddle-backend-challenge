@@ -18,8 +18,10 @@ public class BaseEntity implements Serializable {
 
     @Version
     private long version;
+
     @Column(name = "created_date")
     private LocalDateTime createdDate;
+
     @Column(name = "last_modified_date")
     private LocalDateTime lastModifiedDate;
 

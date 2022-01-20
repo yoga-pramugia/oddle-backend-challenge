@@ -17,7 +17,7 @@ public interface WeatherRepository extends JpaRepository<Weather, Long> {
                     "DATE_SUB(NOW(), INTERVAL 2 DAY))" +
                     "AND w.is_active = 1",
             nativeQuery = true)
-    Collection<Weather> findAllByIntervalADay(@Param("cityName") String cityName);
+    public Collection<Weather> findAllByIntervalADay(@Param("cityName") String cityName);
 
     @Query(
             value = "SELECT * FROM WEATHER w WHERE w.city_name = :cityName AND (DATE(w.created_date) BETWEEN " +
@@ -25,7 +25,7 @@ public interface WeatherRepository extends JpaRepository<Weather, Long> {
                     "DATE_SUB(NOW(), INTERVAL 7 DAY))" +
                     "AND w.is_active = 1",
             nativeQuery = true)
-    Collection<Weather> findAllByIntervalAWeek(@Param("cityName") String cityName);
+    public Collection<Weather> findAllByIntervalAWeek(@Param("cityName") String cityName);
 
     @Query(
             value = "SELECT * FROM WEATHER w WHERE w.city_name = :cityName AND (DATE(w.created_date) BETWEEN " +
@@ -41,5 +41,5 @@ public interface WeatherRepository extends JpaRepository<Weather, Long> {
                     "DATE_SUB(NOW(), INTERVAL 2 YEAR))" +
                     "AND w.is_active = 1",
             nativeQuery = true)
-    Collection<Weather> findAllByIntervalAYear(@Param("cityName") String cityName);
+    public Collection<Weather> findAllByIntervalAYear(@Param("cityName") String cityName);
 }
